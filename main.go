@@ -20,6 +20,7 @@ func main() {
 	add := flag.String("add", "", "add a new todo")
 	complete := flag.Int("complete", 0, "mark a todo as completed")
 	delete := flag.Int("delete", 0, "delete a todo from the table")
+	list := flag.Bool("list", true, "print your todos in a table format")
 
 	flag.Parse()
 
@@ -29,6 +30,9 @@ func main() {
 	errorHandling(err)
 
 	switch {
+
+	case *list:
+		todos.PrintTable()
 
 	case *add != "":
 		todos.Add(*add)
