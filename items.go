@@ -3,10 +3,10 @@ package main
 import "time"
 
 type item struct {
-	task        string
-	isCompleted bool
-	startedAt   time.Time
-	finishedAt  time.Time
+	Task        string    `json:"task"`
+	IsCompleted bool      `json:"isCompleted"`
+	StartedAt   time.Time `json:"startedAt"`
+	FinishedAt  time.Time `json:"finishedAt"`
 }
 
 type Todos []item

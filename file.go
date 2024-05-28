@@ -31,7 +31,7 @@ func (t *Todos) LoadFromFile(filename string) error {
 // Save the updated TODO list to the json file
 func (t *Todos) SaveToFile(filename string) error {
 
-	data, err := json.Marshal(t)
+	data, err := json.MarshalIndent(t, "", "	")
 	if err != nil {
 		return err
 	}

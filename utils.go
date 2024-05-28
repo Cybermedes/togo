@@ -9,10 +9,10 @@ import (
 func (t *Todos) Add(task string) {
 
 	todo := item{
-		task:        task,
-		isCompleted: false,
-		startedAt:   time.Now(),
-		finishedAt:  time.Time{},
+		Task:        task,
+		IsCompleted: false,
+		StartedAt:   time.Now(),
+		FinishedAt:  time.Time{},
 	}
 
 	*t = append(*t, todo)
@@ -37,8 +37,8 @@ func (t *Todos) Complete(index int) error {
 		return errors.New("invalid index/ index out of range")
 	}
 
-	list[index-1].finishedAt = time.Now()
-	list[index-1].isCompleted = true
+	list[index-1].FinishedAt = time.Now()
+	list[index-1].IsCompleted = true
 
 	return nil
 }
